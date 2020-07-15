@@ -9,6 +9,7 @@ module.exports = {
 
     loader.style.display = "none";
     svgContainer.style.display = "block";
+    svgContainer.style.transition = "fadein 2s";
   },
 
   initDom: (element) => {

@@ -7,6 +7,7 @@ type Options = {
   qualidade?: string,
   defaultFillColor?: string,
   defaultStrokeColor?: string,
+  defaultStrokeWidth?: string,
   unidadeData?:
     {
       codIbge: number,

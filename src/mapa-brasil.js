@@ -42,7 +42,7 @@ let draw = (element, options) => {
 
       listPath[i].style.fill = (unidadeData.hasOwnProperty("fillColor") ? unidadeData.fillColor : options.defaultFillColor);
       listPath[i].style.stroke = (unidadeData.hasOwnProperty("strokeColor") ? unidadeData.strokeColor : options.defaultStrokeColor);
-      listPath[i].style.strokeWidth = (unidadeData.hasOwnProperty("strokeWidth") ? unidadeData.strokeWidth : 1);
+      listPath[i].style.strokeWidth = (unidadeData.hasOwnProperty("strokeWidth") ? unidadeData.strokeWidth : options.defaultStrokeWidth);
       listPath[i].innerHTML = `<title>${nomUnidade}</title>`;
 
       if(options.hasOwnProperty("onClick")){

@@ -49,6 +49,7 @@ let dragEvent = (svgContainer) => {
     canSvgPathClickEvents(svgContainer, true);
   };
 
+
   svgContainer.addEventListener("mousedown", onDragStart);
   svgContainer.addEventListener("mousemove", onDrag);
   svgContainer.addEventListener("mouseup", onDragEnd);
@@ -96,7 +97,7 @@ let fitSvgIntoContainer = (element) => {
   let svgWidth = +svgEl.getAttribute('width');
   let svgHeight = +svgEl.getAttribute('height');
 
-  svgContainer.style.position = "absolute";
+  svgContainer.style.position = "relative";
   svgContainer.style.top = "0px";
   svgContainer.style.left = "0px";
   svgContainer.style.cursor = "pointer";
@@ -106,12 +107,17 @@ let fitSvgIntoContainer = (element) => {
     svgWidth = (containerHeight * svgWidth) / svgHeight;
   }
 
-  svgEl.style.width = (svgWidth >= containerWidth ? containerWidth : svgWidth) + 'px';
+  //TODO: Customizado por Guilherme Macedo
+  // svgEl.style.width = (svgWidth >= containerWidth ? containerWidth : svgWidth) + 'px';
+  svgEl.style.width = '100%';
   svgEl.style.height = 'auto';
 
   // margim left
   dragPosX = ((containerWidth - svgWidth) / 2);
-  svgContainer.style.left = dragPosX + 'px';
+
+  //Customizado por Guilherme Macedo
+  // svgContainer.style.left = dragPosX + 'px';
+  svgContainer.style.left = '0px';
 };
 
 module.exports = (element) => {
@@ -127,11 +133,11 @@ module.exports = (element) => {
   fitSvgIntoContainer(element);
 
   // DRAG EVENT
-  dragEvent(svgContainer);
+  // dragEvent(svgContainer);
 
   // MOUSE WHEEL
-  mouseWheelEvent(element);
+  // mouseWheelEvent(element);
 
   // TOUCH EVENT
-  touchEvent(svgContainer);
+  // touchEvent(svgContainer);
 };
